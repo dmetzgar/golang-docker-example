@@ -1,6 +1,7 @@
 steps:
   - name: ":golang:"
     command: "./scripts/test.sh"
+    queue: workers
     plugins:
       - docker-compose#v4.0.0:
           run: app

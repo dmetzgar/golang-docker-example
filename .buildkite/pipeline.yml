@@ -3,7 +3,7 @@ steps:
     agents:
       queue: "*"
       docker: "*"
-    command: "pwd && cd ../.. && ls -al"
+    command: "ls -al"
     plugins:
       - docker-compose#v3.0.0:
           run: app

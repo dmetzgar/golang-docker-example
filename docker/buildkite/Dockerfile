@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		python-pip \
 	&& rm -rf /var/lib/apt/lists/*
 
-RUN pip install --user ccm
+RUN pip install ccm
 
 RUN go get -u github.com/golang/dep/cmd/dep
 RUN go get -u github.com/Masterminds/glide

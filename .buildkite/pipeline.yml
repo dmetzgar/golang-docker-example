@@ -6,3 +6,4 @@ steps:
     plugins:
       - docker-compose#v3.0.0:
           run: app
+          config: docker/buildkite/docker-compose.yml

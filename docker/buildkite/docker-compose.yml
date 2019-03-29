@@ -1,12 +1,16 @@
-app:
-  build: 
-    context: ../../
-    dockerfile: ./Dockerfile
-  volumes:
-    - ./:/go/src/github.com/dmetzgar/golang-docker-example
-    - /usr/bin/buildkite-agent:/usr/bin/buildkite-agent
-  environment:
-    - BUILDKITE_AGENT_ACCESS_TOKEN
-    - BUILDKITE_JOB_ID
-    - BUILDKITE_BUILD_ID
-    - BUILDKITE_BUILD_NUMBER
+version: "3"
+
+services:
+  
+  app:
+    build:
+      context: ../../
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./:/go/src/github.com/dmetzgar/golang-docker-example
+      - /usr/bin/buildkite-agent:/usr/bin/buildkite-agent
+    environment:
+      - BUILDKITE_AGENT_ACCESS_TOKEN
+      - BUILDKITE_JOB_ID
+      - BUILDKITE_BUILD_ID
+      - BUILDKITE_BUILD_NUMBER

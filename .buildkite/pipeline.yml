@@ -3,7 +3,7 @@ steps:
     agents:
       queue: "*"
       docker: "*"
-    command: "ls -al"
+    command: "cd /go && ls -al"
     plugins:
       - docker-compose#v3.0.0:
           run: app

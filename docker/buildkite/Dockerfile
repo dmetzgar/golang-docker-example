@@ -1,10 +1,10 @@
 FROM golang:cross
-RUN mkdir /myfolder
-ADD ../../*.go /myfolder
-RUN mkdir /myfolder/logger
-ADD ../../logger/*.go /myfolder/logger
-RUN mkdir /myfolder/scripts
-ADD ../../scripts/* /myfolder/scripts
+#RUN mkdir /myfolder
+#ADD ../../*.go /myfolder
+#RUN mkdir /myfolder/logger
+#ADD ../../logger/*.go /myfolder/logger
+#RUN mkdir /myfolder/scripts
+#ADD ../../scripts/* /myfolder/scripts
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		gettext-base \

@@ -1,5 +1,7 @@
 app:
-  build: .
+  build: 
+    context: ../../
+    dockerfile: ./Dockerfile
   volumes:
     - ./:/go/src/github.com/dmetzgar/golang-docker-example
     - /usr/bin/buildkite-agent:/usr/bin/buildkite-agent

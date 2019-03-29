@@ -1,10 +1,10 @@
 FROM golang:1.11.1
 #RUN mkdir /myfolder
-ADD *.go .
+ADD *.go ./
 RUN mkdir logger
-ADD logger/*.go logger
+ADD logger/*.go logger/
 RUN mkdir scripts
-ADD scripts/* scripts
+ADD scripts/* scripts/
 
 # RUN apt-get update && apt-get install -y --no-install-recommends \
 # 		gettext-base \

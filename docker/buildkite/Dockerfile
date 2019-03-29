@@ -1,4 +1,4 @@
-FROM golang:cross
+FROM golang:1.11.1
 #RUN mkdir /myfolder
 #ADD ../../*.go /myfolder
 #RUN mkdir /myfolder/logger

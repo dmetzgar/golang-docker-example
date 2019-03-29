@@ -1,30 +1,30 @@
 FROM golang:1.11.1
 #RUN mkdir /myfolder
-#ADD ../../*.go /myfolder
-#RUN mkdir /myfolder/logger
-#ADD ../../logger/*.go /myfolder/logger
-#RUN mkdir /myfolder/scripts
-#ADD ../../scripts/* /myfolder/scripts
+ADD *.go .
+RUN mkdir logger
+ADD logger/*.go logger
+RUN mkdir scripts
+ADD scripts/* scripts
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-		gettext-base \
-		libyaml-dev \
-		openjdk-8-jre \
-		python \
-		python-dev \
-		python-pip \
-        python-setuptools \
-	&& rm -rf /var/lib/apt/lists/*
+# RUN apt-get update && apt-get install -y --no-install-recommends \
+# 		gettext-base \
+# 		libyaml-dev \
+# 		openjdk-8-jre \
+# 		python \
+# 		python-dev \
+# 		python-pip \
+#         python-setuptools \
+# 	&& rm -rf /var/lib/apt/lists/*
 
-RUN pip install ccm
+# RUN pip install ccm
 
-RUN go get -u github.com/golang/dep/cmd/dep
-RUN go get -u github.com/Masterminds/glide
-RUN go get -u golang.org/x/lint/golint
-RUN go get github.com/axw/gocov/gocov
-RUN go get github.com/mattn/goveralls
-RUN go get golang.org/x/tools/cmd/cover
-RUN ccm create test -v 3.9 -n 1 -s
+# RUN go get -u github.com/golang/dep/cmd/dep
+# RUN go get -u github.com/Masterminds/glide
+# RUN go get -u golang.org/x/lint/golint
+# RUN go get github.com/axw/gocov/gocov
+# RUN go get github.com/mattn/goveralls
+# RUN go get golang.org/x/tools/cmd/cover
+# RUN ccm create test -v 3.9 -n 1 -s
 
 
 # The golang Docker sets the $GOPATH to be /go

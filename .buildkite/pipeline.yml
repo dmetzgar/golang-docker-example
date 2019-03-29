@@ -1,7 +1,8 @@
 steps:
   - label: ":golang:"
     agents:
-      queue: workers
+      queue: "*"
+      docker: "*"
     command: "ls -al"
     plugins:
       - docker-compose#v3.0.0:
